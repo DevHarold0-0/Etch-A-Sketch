@@ -44,11 +44,16 @@ button:hover {
 
 #row {
     display: flex;
-    flex-direction: row;   
+    flex-direction: row; 
+    justify-content: center;
+    align-content: center;
+    width: 960px;
 }
 
 .box {
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
+    border: 1px solid grey;
     background-color: black;
+    flex: 1;
 }

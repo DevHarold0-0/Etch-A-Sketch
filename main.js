@@ -11,6 +11,7 @@ function grid() {
             const box = document.createElement("div");
             box.classList.add("box");
             row.appendChild(box);
+            console.log(i,k)
         }
     }
 }
