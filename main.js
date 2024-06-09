@@ -1,33 +1,56 @@
 const container = document.querySelector("#container");
 
 // Grid
+
+
+const myGrid = 16;  
 function grid() {
-    for (let i = 0; i < 16; i++) {
+
+    
+    for (let i = 0; i < myGrid; i++) {
         const row = document.createElement("div");
         row.setAttribute("id", "row");
         container.appendChild(row);
     
-        for (let k = 0; k < 16; k++) {
+        for (let k = 0; k < myGrid; k++) {
             const box = document.createElement("div");
             box.classList.add("box");
             row.appendChild(box);
             console.log(i,k)
         }
     }
+
+    const boxResize = 640 / myGrid;
+    const calc = boxResize.toString() + "px"
+
+    const boxes = document.querySelectorAll(".box");
+        boxes.forEach(boxes => { 
+        boxes.setAttribute(`style`, `height: ${calc}; width: ${calc};`);
+    })
+
 }
 grid();
 
 
 
-
 // Hover effect
 function hover() {
-    const boxes = document.querySelectorAll(".box")
+    const boxes = document.querySelectorAll(".box");
     // let timeOut;
-
     boxes.forEach(div => {
         div.addEventListener("mouseenter", (event) => {
-            event.target.style.backgroundColor = "orange";
+ 
+            //Multi colors
+            let chars = "0123456789ABCDEF"
+            let color = "";
+            let colorRand = "";
+
+            for (let i = 0; i < 6; i++) {
+                color += chars[Math.floor(Math.random() * 16)];
+            }
+
+            colorRand = '#'+color
+            event.target.style.backgroundColor = `${colorRand}`;
         
             // timeOut = setInterval(() => {
             //     event.target.style.backgroundColor = "black";
@@ -63,14 +86,22 @@ function newGrid() {
         const row = document.createElement("div");
         row.setAttribute("id", "row");
         container.appendChild(row);
-        
     
         for (let k = 0; k < userInput; k++) {
             const box = document.createElement("div");
             box.classList.add("box");
             row.appendChild(box);
+            console.log(i,k)
         }
     }
+
+    const boxResize = 640 / userInput;
+    const calc = boxResize.toString() + "px"
+
+    const boxes = document.querySelectorAll(".box");
+        boxes.forEach(boxes => { 
+        boxes.setAttribute(`style`, `height: ${calc}; width: ${calc};`);
+    })
 }
 
 
