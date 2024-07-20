@@ -68,7 +68,6 @@ hover();
 //Reset 
 let userInput;
 function newGrid() {
-
     //clearing default 16 X 16 grid
     const rowClear = document.querySelectorAll("#row");
         rowClear.forEach(rowClear => {
