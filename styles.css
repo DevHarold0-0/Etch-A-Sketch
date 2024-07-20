@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #231B30;
+}
+
 
 #header {
     display: flex;
@@ -47,6 +51,6 @@ button:hover {
 }
 
 .box {
-    border: 1px solid grey;
+    border: 1px solid #231B30;
     background-color: black;
 }
